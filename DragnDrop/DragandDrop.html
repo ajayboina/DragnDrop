@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="Styles/Kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="Styles/Kendo/kendo.default.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/Angular/angular.js"></script>
+    <script src="Scripts/kendo.all.min.js"></script>
+    <script src="Scripts/DnDusingDirective.js"></script>
+</head>
+
+<body>
+        <div ng-app="DragnDrop">
+            <div ng-controller="myController">
+                <div class="demo-section k-content">
+                    <div class="{{ draggableCLass }}" id="draggable" kendo-draggable k-dragstart="onDragStart" k-hint="draggableHint">Drag me</div>
+                    <div id="droptarget" kendo-droptarget k-drop="onDrop">
+                        <div ng-show="IsVisible">
+                            <my-Employee></my-Employee>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        #draggable {
+            cursor:move;
+            text-align:center;
+            width: 80px;
+            height: 30px;
+            border: 2px solid green;
+            margin: 5px;
+            display: inline-block;
+            background-color: orange;
+        }
+
+        #droptarget {
+            width: 200px;
+            height: 200px;
+            border: 2px solid green;
+            margin: 0 96px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #draggable.hollow {
+            cursor: default;
+            background: #ececec;
+        }
+
+        .demo-section {
+            height: 300px;
+            position: relative;
+        }
+    </style>
+</body>
+</html>
